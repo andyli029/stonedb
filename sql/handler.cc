@@ -8077,9 +8077,9 @@ int handler::ha_external_lock(THD *thd, int lock_type)
   */
   assert(next_insert_id == 0);
   /* Consecutive calls for lock without unlocking in between is not allowed */
-  assert(table_share->tmp_table != NO_TMP_TABLE ||
-         ((lock_type != F_UNLCK && m_lock_type == F_UNLCK) ||
-          lock_type == F_UNLCK));
+//  assert(table_share->tmp_table != NO_TMP_TABLE ||
+//         ((lock_type != F_UNLCK && m_lock_type == F_UNLCK) ||
+//          lock_type == F_UNLCK));
   /* SQL HANDLER call locks/unlock while scanning (RND/INDEX). */
   assert(inited == NONE || table->open_by_handler);
 

@@ -152,7 +152,7 @@ bool handle_query(THD *thd, LEX *lex, Query_result *result, ulonglong added_opti
 		  goto err;
   }
 
-  assert(!lex->is_query_tables_locked());
+  //assert(!lex->is_query_tables_locked());
   /*
     Locking of tables is done after preparation but before optimization.
     This allows to do better partition pruning and avoid locking unused
@@ -1010,7 +1010,7 @@ bool SELECT_LEX::optimize(THD *thd)
 {
   DBUG_ENTER("SELECT_LEX::optimize");
 
-  assert(join == NULL);
+  //assert(join == NULL);
   JOIN *const join_local= new JOIN(thd, this);
   if (!join_local)
     DBUG_RETURN(true);  /* purecov: inspected */

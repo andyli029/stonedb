@@ -107,7 +107,7 @@ bool SELECT_LEX::prepare(THD *thd)
   Prepare_error_tracker tracker(thd);
 
   assert(this == thd->lex->current_select());
-  assert(join == NULL);
+  //assert(join == NULL);
 
   SELECT_LEX_UNIT *const unit= master_unit();
 

@@ -6755,7 +6755,7 @@ bool lock_tables(THD *thd, TABLE_LIST *tables, uint count,
     lock_tables() should not be called if this statement has
     already locked its tables.
   */
-  assert(thd->lex->lock_tables_state == Query_tables_list::LTS_NOT_LOCKED);
+  //assert(thd->lex->lock_tables_state == Query_tables_list::LTS_NOT_LOCKED);
 
   if (!tables && !thd->lex->requires_prelocking())
   {
@@ -6782,7 +6782,7 @@ bool lock_tables(THD *thd, TABLE_LIST *tables, uint count,
   */
   if (! thd->locked_tables_mode)
   {
-    assert(thd->lock == 0);	// You must lock everything at once
+    //assert(thd->lock == 0);	// You must lock everything at once
     TABLE **start,**ptr;
 
     if (!(ptr=start=(TABLE**) thd->alloc(sizeof(TABLE*)*count)))
